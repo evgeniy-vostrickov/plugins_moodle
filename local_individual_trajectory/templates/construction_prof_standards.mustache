@@ -1,0 +1,104 @@
+<h2 class="headers-page">Доступные профессиональные стандарты</h2>
+<div class="list-courses">
+  {{#prof_standards}}
+      <div class="prof-stand-card">
+        <div class="banner"></div>
+        <h2 class="name">{{&name}}</h2>
+        <div class="title">Регистрационный номер: {{&num_standard}}</div>
+        <div class="desc">{{&description}}</div>
+        <div class="actions">
+          <div class="dop-info">
+            <h2><a href="#"><span>{{&count_competence}}</span><small>Компетенций</small></a></h2>
+            <h2><a href="#"><span>{{&count_course}}</span><small>Курсов</small></a></h2>
+            <h2><a href="#"><span>{{&count_duration}}</span><small>Длительность<br>(недель)</small></a></h2>
+          </div>
+          <form class="form-prof-info" action="learning_path.php" method="post">
+            <div class="prof-info">
+              <a class="prof-btn-primary modal-open__close" data-id="{{&id}}">Подробнее</a>
+              <input type="submit" name="build_it" class="prof-btn-primary build_individual_traj" value="Построить" />
+              <input class="hide-element" name="prof_id" value="{{&id}}" />
+            </div>
+          </form>
+        </div>
+      </div>
+  {{/prof_standards}}
+</div>
+
+
+<div class="prof-stand-modal" id="modal-opened">
+  <div class="modal-container">
+    <div class="modal__details">
+      <h1 id="modal__title"></h1>
+    </div>
+    <p class="modal__text">
+    </p>
+    <h3>Обобщенные трудовые функции</h3>
+    <ul id="general_work_func">
+    </ul>
+    <h3>Трудовые функции</h3>
+    <ul id="specific_work_func">
+    </ul>
+    <form class="form-prof-info" action="learning_path.php" method="post">
+      <input type="submit" name="build_it" class="modal__btn build_individual_traj" value="Построить ИОТ" />
+      <input id="input_prof_id" class="hide-element" name="prof_id" />
+    </form>
+    <a class="modal-close modal-open__close"></a>
+  </div>
+</div>
+
+
+<script>
+    let btnOpenClose = document.querySelectorAll('.modal-open__close')
+    btnOpenClose.forEach((btn) => {
+        btn.onclick = () => {
+            let modalOpened = document.getElementById('modal-opened')
+            if (btn.dataset.id) {
+              {{#prof_standards}}
+                  if({{&id}} == btn.dataset.id) {
+                    let title = document.querySelector('#modal__title')
+                    title.textContent = "{{&name}}"
+
+                    let general = document.querySelector('#general_work_func')
+                    general.innerHTML = ''
+                    let element_list;
+                    {{#general_work_func}}
+                      element_list = document.createElement('li')
+                      element_list.innerHTML = "{{.}}";
+                      general.append(element_list)
+                    {{/general_work_func}}
+
+                    let specific = document.querySelector('#specific_work_func')
+                    specific.innerHTML = ''
+                    {{#specific_work_func}}
+                      element_list = document.createElement('li')
+                      element_list.innerHTML = "{{.}}";
+                      specific.append(element_list)
+                    {{/specific_work_func}}
+
+                    let input = document.querySelector('#input_prof_id')
+                    input.value = {{&id}}
+                  }
+              {{/prof_standards}}
+            }
+            modalOpened.classList.toggle("prof-stand-modal-action")
+        };
+    });
+
+    let btnsBuild = document.querySelectorAll('.build_individual_traj')
+    btnsBuild.forEach((btn) => {
+      {{#is_individual_trajectory}}
+        if({{.}} == true)
+          btn.classList.add("hide-element")
+      {{/is_individual_trajectory}}
+      {{#is_admin}}
+        if({{.}} == true) {
+          btn.value = 'Изменить'
+          btn.name = 'change_form'
+          let forms = document.querySelectorAll('.form-prof-info')
+          forms.forEach((form) => {
+            form.action = '/admin/tool/prof_standards/index.php'
+          })
+        }
+      {{/is_admin}}
+    });
+</script>

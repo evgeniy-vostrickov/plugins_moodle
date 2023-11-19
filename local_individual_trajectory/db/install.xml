@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="local/individual_trajectory/db" VERSION="20160830" COMMENT="XMLDB file for local IET"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
+>
+  <TABLES>
+    <TABLE NAME="individual_trajectory" COMMENT="List built user individual educational trajectory">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="userid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="competence_list" TYPE="text" NOTNULL="true" SEQUENCE="false" COMMENT="List built competence"/>
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="List built competence"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="prof_standards" COMMENT="List professional standards">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="num_standard" TYPE="char" LENGTH="100" NOTNULL="true" SEQUENCE="false" COMMENT="Number professional standard"/>
+        <FIELD NAME="name" TYPE="char" LENGTH="400" NOTNULL="true" SEQUENCE="false" COMMENT="Number professional standard"/>
+        <FIELD NAME="description" TYPE="text" NOTNULL="true" SEQUENCE="false" COMMENT="Description professional standard"/>
+        <FIELD NAME="general_work_func" TYPE="text" NOTNULL="true" SEQUENCE="false" COMMENT="List generalized work functions"/>
+        <FIELD NAME="specific_work_func" TYPE="text" NOTNULL="true" SEQUENCE="false" COMMENT="List specific work functions"/>
+        <FIELD NAME="competence_list" TYPE="char" LENGTH="100" NOTNULL="true" SEQUENCE="false" COMMENT="List competence professional standard"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+    </TABLE>
+    <!-- <TABLE NAME="prof_standards_course" COMMENT="List a prof standards to a course">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="profstandard_id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="course_id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+    </TABLE> -->
+  </TABLES>
+</XMLDB>

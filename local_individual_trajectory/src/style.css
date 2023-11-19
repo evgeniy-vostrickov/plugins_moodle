@@ -1,0 +1,567 @@
+body {
+	--light: hsl(0, 0%, 100%);
+	--background: linear-gradient(to right bottom, hsl(236, 50%, 50%), hsl(195, 50%, 50%));
+}
+
+.hide-element {
+	display: none;
+}
+
+.center-element {
+	text-align: center;
+}
+
+/* Карточки курсов */
+#region-main {
+	background-color: #edf2f7;
+}
+
+.list-courses {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+.course {
+	border-radius: 0.5rem;
+	margin-bottom: 1.5rem;
+	width: 80%;
+}
+
+.card-wrapper {
+	box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+	overflow: hidden;
+	border-radius: 0.5rem;
+}
+
+.card-wrapper a {
+	height: auto;
+}
+
+.card-wrapper-image {
+	/* background-image: url(https://images.unsplash.com/photo-1517736996303-4eec4a66bb17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1268&q=80); */
+	background-size: cover;
+	background-position: bottom;
+	height: 100%;
+	width: 10rem;
+}
+
+.card-wrapper-content {
+	width: 100%;
+}
+
+.card-wrapper-content-header {
+	padding: 1rem;
+	height: 13rem;
+	background-color: #fff;
+	word-break: break-all;
+}
+
+.card-wrapper-content-header .title {
+	font-weight: 700;
+	font-size: 1.25rem;
+	/* 20px */
+}
+
+.card-wrapper-content-header .subtitle {
+	color: #4a5568;
+}
+
+.card-wrapper-content-body {
+	padding: 1rem 1.25rem;
+	background-color: #f7fafc;
+}
+
+.card-wrapper-content-body .body-content {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #f7fafc;
+}
+
+.card-wrapper-content-body .body-btn-info {
+	font-size: 1.125rem;
+	color: #4a5568;
+}
+
+.card-wrapper-content-body .body-btn-more {
+	font-weight: 700;
+	background-color: #4c51bf;
+	color: #fff;
+	margin-top: 0.75rem;
+	padding: 0.5rem 1.25rem;
+	border: 0;
+	border-radius: 0.5rem;
+	text-decoration: none;
+	cursor: pointer;
+	box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.card-wrapper-content-body .body-btn-more:hover {
+	background-color: #5a67d8;
+}
+
+
+/* Таблица с характеристиками ИТО */
+.table-characteristics {
+	text-align: center;
+	font-size: 1.125rem;
+	margin: 2rem auto;
+}
+
+.table-characteristics th {
+	font-weight: 600;
+	background: #b9c9fe;
+	border-top: 4px solid #aabcfe;
+	border-bottom: 1px solid white;
+	color: #039;
+	padding: 0.5rem;
+}
+
+.table-characteristics td {
+	background: #e8edff;
+	border-bottom: 1px solid white;
+	color: rgb(42 42 179);
+	border-top: 1px solid transparent;
+	padding: 1rem;
+}
+
+.table-characteristics tr:hover td {
+	background: #ccddff;
+}
+
+/* Заголовки страницы ИОТ */
+.headers-page {
+	font-size: 2.1rem;
+	font-weight: 700;
+	text-align: center;
+	margin-bottom: 2rem;
+}
+
+/* Заголовки статистики ИОТ */
+.hp-course {
+	color: #0042c5;
+	font-style: italic;
+}
+
+/* Список компетенций */
+.rounded {
+	counter-reset: li;
+	list-style: none;
+	font: 14px "Trebuchet MS", "Lucida Sans";
+	padding: 0;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
+	margin-left: 1rem;
+}
+
+.rounded a {
+	position: relative;
+	display: inline-block;
+	padding: .4em .4em .4em 2em;
+	margin: .5em 0;
+	color: #444;
+	text-decoration: none;
+	border-radius: .3em;
+	transition: .3s ease-out;
+}
+
+.rounded a:hover {
+	background: #E9E4E0;
+}
+
+.rounded a:hover:before {
+	transform: rotate(360deg);
+}
+
+.rounded a:before {
+	content: counter(li);
+	counter-increment: li;
+	position: absolute;
+	left: -1.3em;
+	top: 50%;
+	margin-top: -1.3em;
+	background: #8FD4C1;
+	height: 2.5em;
+	width: 2.5em;
+	line-height: 2em;
+	border: .3em solid white;
+	text-align: center;
+	font-weight: bold;
+	border-radius: 2em;
+	transition: all .3s ease-out;
+}
+
+/* Карточка проф стандарта */
+.prof-stand-card {
+	font-family: Montserrat, sans-serif;
+	background-color: #fff;
+	width: 450px;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	border-radius: 2rem;
+	box-shadow: 0px 1rem 1.5rem rgba(0, 0, 0, 0.5);
+	margin-bottom: 2rem;
+}
+
+.prof-stand-card .banner {
+	background-image: url("./prof_standard.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 11rem;
+}
+
+.prof-stand-card h2.name {
+	text-align: center;
+	padding: 1rem 2rem 0.5rem;
+	margin: 0;
+}
+
+.prof-stand-card .title {
+	color: #a0a0a0;
+	font-size: 1rem;
+	text-align: center;
+	padding: 0 2rem 1.2rem;
+}
+
+.prof-stand-card .desc {
+	text-align: justify;
+	padding: 0 1rem 1rem;
+}
+
+.prof-stand-card .actions {
+	padding: 0 2rem 1.2rem;
+	display: flex;
+	flex-direction: column;
+	order: 99;
+}
+
+.prof-stand-card .actions .dop-info {
+	display: flex;
+}
+
+.prof-stand-card .actions .dop-info h2 {
+	text-align: center;
+	width: 50%;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+.prof-stand-card .actions .dop-info h2 a {
+	text-decoration: none;
+	padding: 0.8rem;
+	display: flex;
+	flex-direction: column;
+	border-radius: 0.8rem;
+	transition: background-color 100ms ease-in-out;
+}
+
+.prof-stand-card .actions .dop-info h2 a span {
+	color: #1c9eff;
+	font-weight: bold;
+	transform-origin: bottom;
+	transform: scaleY(1.3);
+	transition: color 100ms ease-in-out;
+}
+
+.prof-stand-card .actions .dop-info h2 a small {
+	color: #afafaf;
+	font-size: 0.85rem;
+	font-weight: normal;
+}
+
+.prof-stand-card .actions .dop-info h2 a:hover {
+	background-color: #f2f2f2;
+}
+
+.prof-stand-card .actions .dop-info h2 a:hover span {
+	color: #007ad6;
+}
+
+.prof-stand-card .actions .form-prof-info {
+	margin: 0;
+}
+
+.prof-stand-card .actions .prof-info {
+	display: flex;
+}
+
+.prof-stand-card .actions .prof-info .prof-btn-primary {
+	color: inherit;
+	font: inherit;
+	font-weight: bold;
+	font-size: 1.4rem;
+	background-color: #ffd01a;
+	width: 100%;
+	border: none;
+	padding: 1rem;
+	margin: 0.5rem;
+	outline: none;
+	box-sizing: border-box;
+	border-radius: 1.5rem/50%;
+	transition: background-color 100ms ease-in-out, transform 200ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+.prof-stand-card .actions .prof-info .modal-open__close {
+	color: #fff;
+	background-color: #408cff;
+	text-align: center;
+}
+
+.prof-stand-card .actions .prof-info .prof-btn-primary:hover {
+	background-color: #efb10a;
+	transform: scale(1.1);
+}
+
+.prof-stand-card .actions .prof-info .modal-open__close:hover {
+	background-color: #1152b4;
+}
+
+.prof-stand-card .actions .prof-info .prof-btn-primary:active {
+	background-color: #e8a200;
+	transform: scale(1);
+}
+
+.prof-stand-card .actions .prof-info .modal-open__close:active {
+	background-color: #004ab9;
+}
+
+/* Модальное окно проф стандарта */
+.modal-open__close,
+.modal-open__close:link {
+	font-family: inherit !important;
+	text-decoration: none !important;
+	cursor: pointer;
+}
+
+/* modal */
+/* =============================================== */
+.prof-stand-modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 10;
+
+	display: none;
+	justify-content: center;
+	align-items: center;
+
+	width: 100%;
+	height: 100%;
+
+	background: hsla(0, 0%, 40%, .6);
+}
+
+/* using :target */
+/* .prof-stand-modal:target {
+  display: flex;
+} */
+
+.prof-stand-modal-action {
+	display: flex;
+}
+
+.prof-stand-modal .modal-container {
+	width: 60rem;
+	padding: 2rem 2rem;
+	border-radius: .8rem;
+
+	color: var(--light);
+	background: var(--background);
+	box-shadow: .4rem .4rem 2.4rem .2rem hsla(236, 50%, 50%, 0.3);
+	position: relative;
+
+	max-height: calc(100vh - 100px);
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.modal__details {
+	text-align: center;
+	margin-bottom: 1rem;
+	padding-bottom: 1rem;
+	width: 90%;
+	margin: 0 auto;
+	border-bottom: 1px solid hsla(0, 0%, 100%, .4);
+}
+
+#modal__title {
+	font-size: 2.6rem;
+}
+
+.modal__description {
+	font-size: 1.6rem;
+	font-style: italic;
+}
+
+.modal__text {
+	padding: 0 2rem;
+	margin-bottom: 1rem;
+}
+
+.modal__text::before {
+	content: '';
+
+	position: absolute;
+	top: 0%;
+	left: 100%;
+	transform: translate(-50%, -50%);
+
+	width: 18rem;
+	height: 18rem;
+	border: 1px solid hsla(0, 0%, 100%, .2);
+	border-radius: 100rem;
+
+	pointer-events: none;
+}
+
+#general_work_func li,
+#specific_work_func li {
+	font-size: 1.2rem;
+}
+
+.modal__btn {
+	padding: 1rem 1.6rem;
+	border: 1px solid hsla(0, 0%, 100%, .4);
+	border-radius: 100rem;
+
+	color: inherit;
+	background: transparent;
+	font-size: 1.4rem;
+	font-family: inherit;
+	letter-spacing: .2rem;
+
+	transition: .2s;
+	cursor: pointer;
+}
+
+.modal__btn:hover,
+.modal__btn:focus {
+	border-color: hsla(0, 0%, 100%, .6);
+	transform: translateY(-.2rem);
+}
+
+/* links */
+/* =============================================== */
+
+.modal-close {
+	width: 3.5rem;
+	height: 3.5rem;
+	border: 1px solid hsla(0, 0%, 100%, .4);
+	border-radius: 100rem;
+
+	color: inherit;
+	font-size: 2.2rem;
+
+	position: absolute;
+	top: 2rem;
+	right: 2rem;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	transition: .2s;
+}
+
+.modal-close::before {
+	content: '×';
+
+	transform: translateY(-.1rem);
+}
+
+.modal-close:hover,
+.modal-close:focus {
+	border-color: hsla(0, 0%, 100%, .6);
+	transform: translateY(-.2rem);
+}
+
+/* Range Slider */
+.range-slider {
+	/* position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%); */
+	width: 500px;
+	height: 60px;
+	padding: 30px;
+	padding-left: 40px;
+	background: #fcfcfc;
+	border-radius: 20px;
+	display: flex;
+	align-items: center;
+	box-shadow: 0px 15px 40px #7E6D5766;
+}
+
+/* .range-slider label {
+	font-size: 24px;
+	font-weight: 400;
+	font-family: Open Sans;
+	padding-left: 10px;
+	color: black;
+} */
+
+.range-slider input[type="range"] {
+	width: 420px;
+	height: 2px;
+	background: black;
+	border: none;
+	outline: none;
+}
+
+
+
+@media (min-width: 768px) {
+	.course {
+		width: 45rem;
+	}
+
+	.card-wrapper {
+		display: flex;
+	}
+
+	/* .card-wrapper-image {
+		width: 14rem;
+	} */
+
+	.card-wrapper-content-header {
+		padding: 1.25rem;
+	}
+
+	.card-wrapper-content-header .title {
+		font-size: 1.5rem;
+		/* 24px */
+	}
+
+	.card-wrapper-content-header .subtitle {
+		font-size: 1.25rem;
+		/* 20px */
+	}
+
+	.card-wrapper-content-body {
+		padding: 1rem 1.5rem;
+	}
+
+	.card-wrapper-content-body .body-btn-more {
+		padding: 0.75rem 1.5rem;
+		font-size: 1.125rem;
+	}
+}
+
+@media (min-width: 640px) {
+	/* .card-wrapper-content-body .body-content {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	} */
+}
+
+@media (max-width: 576px) {
+	#region-main {
+		padding: 1.25rem;
+	}
+}
