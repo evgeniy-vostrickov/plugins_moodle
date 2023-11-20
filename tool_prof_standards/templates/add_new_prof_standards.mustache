@@ -1,0 +1,49 @@
+{{#prof_standard}}
+    <div class="form-profstan">
+        <form class="form-add-profstan" action="index.php" onsubmit="return validFunction()" method="post">
+            <input type="text" placeholder="Название профессионального стандарта" name="name_standard" value="{{&name_standard}}" required />
+            <input type="text" placeholder="Номер" name="num_standard" value="{{&num_standard}}" required />
+            <textarea placeholder="Описание профессионального стандарта" name="description" rows="2" required>{{&description}}</textarea>
+            <textarea placeholder="Обобщенные трудовые функции" name="general_work_func" rows="5" required>{{&general_work_func}}</textarea>
+            <textarea placeholder="Трудовые функции" name="specific_work_func" rows="5" required>{{&specific_work_func}}</textarea>
+            <div class="list-competencies">
+                <h4>Компетенции для освоения:</h4>
+                {{#list_all_competencies}}
+                    <div class="element-list-competency">
+                        <input type="checkbox" id="{{id}}" value="{{id}}" name="competencies[]" {{checked}} />
+                        <label for="{{id}}">{{name}}</label>
+                    </div>
+                {{/list_all_competencies}}
+            </div>
+            {{#id_prof_standard}}
+                <input class="hide-element" name="id_profstan" value="{{.}}" />
+            {{/id_prof_standard}}
+            <div class="wrap-btn-profstan">
+                <input id="btn-change-profstan" type="submit" name="add_profstan" value="Добавить" />
+                {{#id_prof_standard}}
+                    <input id="btn-delete-profstan" type="submit" name="delete_profstan" value="Удалить" />
+                {{/id_prof_standard}}
+            </div>
+            <p class="message">Просмотреть весь список добавленных <a href="/local/individual_trajectory/prof_standards.php">профессиональных стандартов</a></p>
+        </form>
+    </div>
+{{/prof_standard}}
+
+<script>
+    {{#id_prof_standard}}
+        if({{.}}) {
+          let btn = document.querySelector('#btn-change-profstan')
+          btn.value = 'Редактировать'
+          btn.name = 'edit_profstan'
+        }
+    {{/id_prof_standard}}
+    
+    function validFunction() {
+        let checked = document.querySelectorAll('input[type=checkbox]:checked').length
+
+        if(checked < 2) {
+            alert("Необходимо выбрать компетенции!")
+            return false
+        }
+    }
+</script>

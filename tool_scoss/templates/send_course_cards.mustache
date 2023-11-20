@@ -1,0 +1,26 @@
+<h2>{{name_page}}</h2>
+
+<form class="form-scoss" action="send_request_with_course.php" method="post">
+    <select name="id_course" id="selectCourses">
+        {{#courses}}
+            <option value="{{&id}}">{{&fullname}}</option>
+        {{/courses}}
+    </select>
+    <input id="" type="submit" value="Отправить карточку курса" />
+</form>
+
+<form class="form-scoss" action="send_request_with_users.php" method="post">
+    <input id="" type="submit" value="Записать пользователей на курс" disabled />
+</form>
+
+<form class="form-scoss" action="send_progress.php" method="post">
+    <input id="" type="submit" value="Отправить прогресс пользователей" disabled />
+</form>
+
+<form class="form-scoss" action="show_table_edu.php" method="post">
+    <input id="" type="submit" value="Показать таблицу transfer_onlineedu" />
+</form>
+
+<script>
+    // Отправка Ajax запроса на сервер
+</script>
