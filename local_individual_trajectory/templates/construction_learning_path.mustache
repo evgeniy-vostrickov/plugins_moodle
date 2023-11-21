@@ -9,42 +9,6 @@
             </div>
         {{/new_usercompetencies}}
     </fieldset>
-
-    <legend>Выберите максимальную трудоемкость курсов</legend>
-    <div class="range-slider">
-        <input type="range" name="laboriousness" min="0" max="5" value="2.5" id="fader" step="0.5" list="volsettings" oninput="rangeValueLaboriousness.innerText = this.value">
-        <datalist id="volsettings">
-            <option>0</option>
-            <option>0.5</option>
-            <option>1.0</option>
-            <option>1.5</option>
-            <option>2.0</option>
-            <option>2.5</option>
-            <option>3.0</option>
-            <option>3.5</option>
-            <option>4.0</option>
-            <option>4.5</option>
-            <option>5.0</option>
-        </datalist>
-        <p id="rangeValueLaboriousness">2.5</p>
-    </div>
-    
-    <legend style="margin-top: 20px;">Выберите максимальную длительность курсов</legend>
-    <div class="range-slider" style="margin-bottom: 20px;">
-        <input type="range" name="duration" min="0" max="40" value="20" id="fader" step="5" list="volsettings2" oninput="rangeValueDuration.innerText = this.value">
-        <datalist id="volsettings2">
-            <option>0</option>
-            <option>5</option>
-            <option>10</option>
-            <option>15</option>
-            <option>20</option>
-            <option>25</option>
-            <option>30</option>
-            <option>35</option>
-            <option>40</option>
-        </datalist>
-        <p id="rangeValueDuration">20</p>
-    </div>
     <input type="submit" class="btn btn-primary" value="Построить" />
 </form>
 
